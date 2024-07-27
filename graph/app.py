@@ -2,10 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from flask import Flask, request, send_file
 import io
-import base64
 
-# Create a Flask app
-app = Flask(__name__)
 
 def create_water_consumption_graph(data, selected_area=None):
     """
@@ -53,7 +50,6 @@ def save_graph_as_image(fig):
     img_bytes.seek(0)
     return img_bytes
 
-@app.route('/get_graph', methods=['GET'])
 def get_graph():
     # Dummy data for demonstration
     data = pd.DataFrame({
@@ -72,4 +68,4 @@ def get_graph():
     return send_file(img_bytes, mimetype='image/png', as_attachment=True, attachment_filename='graph.png')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    print(get_graph())
