@@ -120,7 +120,7 @@ app.post("/login", async (req, res) => {
 app.get('/plot', async (req, res) => {
   try {
     const query = `
-        SELECT area, water_used_last_month
+        SELECT area_zone, water_used_last_month
         FROM households_data
         ORDER BY water_used_last_month DESC
         LIMIT 5
@@ -128,6 +128,52 @@ app.get('/plot', async (req, res) => {
     // Execute the query
     const result = await db.query(query);
     console.log(result);
+    // Result {
+    //     command: 'SELECT',
+    //     rowCount: 5,
+    //     oid: null,
+    //     rows: [
+    //       { area_zone: 'Zone 2', water_used_last_month: '9652' },
+    //       { area_zone: 'Zone 4', water_used_last_month: '9516' },
+    //       { area_zone: 'Zone 2', water_used_last_month: '9484' },
+    //       { area_zone: 'Zone 2', water_used_last_month: '9081' },
+    //       { area_zone: 'Zone 1', water_used_last_month: '9009' }
+    //     ],
+    //     fields: [
+    //       Field {
+    //         name: 'area_zone',
+    //         tableID: 16775,
+    //         columnID: 4,
+    //         dataTypeID: 25,
+    //         dataTypeSize: -1,
+    //         dataTypeModifier: -1,
+    //         format: 'text'
+    //       },
+    //       Field {
+    //         name: 'water_used_last_month',
+    //         tableID: 16775,
+    //         columnID: 10,
+    //         dataTypeID: 25,
+    //         dataTypeSize: -1,
+    //         dataTypeModifier: -1,
+    //         format: 'text'
+    //       }
+    //     ],
+    //     _parsers: [ [Function: noParse], [Function: noParse] ],
+    //     _types: TypeOverrides {
+    //       _types: {
+    //         getTypeParser: [Function: getTypeParser],
+    //         setTypeParser: [Function: setTypeParser],
+    //         arrayParser: [Object],
+    //         builtins: [Object]
+    //       },
+    //       text: {},
+    //       binary: {}
+    //     },
+    //     RowCtor: null,
+    //     rowAsArray: false,
+    //     _prebuiltEmptyResultObject: { area_zone: null, water_used_last_month: null }
+    //   }
     res.send("done")
  
 
