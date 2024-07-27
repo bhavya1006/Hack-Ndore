@@ -25,10 +25,10 @@ function Sidebar({ children }) {
             <aside isOpen={isSidebarOpen} onClose={toggleSidebar} id="logo-sidebar" className={`fixed top-1 left-1 bottom-1 z-40 w-64 rounded-lg pt-4 border-r-2 transition-transform duration-300 ${isSidebarOpen ? 'translate-x-0' : '-translate-x-[102%]'}   bg-[#212631] md:translate-x-0 dark:bg-gray-800`} aria-label="Sidebar">
                 <div className="h-full flex flex-col px-3 py-4 overflow-y-auto rounded-lg bg-[#212631] dark:bg-gray-900">
                     <ul className="flex-1 flex flex-col space-y-2">
-                        <li className='flex items-center relative mb-16'>
-                            <img src={logoo} className="h-16 w-7 absolute left-0" alt="Logo" />
+                        <li className='flex items-center mt-14 relative mb-16'>
+                            <img src={logoo} className="h-36 w-full absolute left-0" alt="Logo" />
                             <a href="https://flowbite.com" className="flex flex-col w-full">
-                                <span className="self-center text-white text-md font-semibold text-center dark:text-white">Municipal Corps</span>
+                                {/* <span className="self-center text-white text-md font-semibold text-center dark:text-white">Municipal Corps</span> */}
                             </a>
                         </li>
                         <li>
