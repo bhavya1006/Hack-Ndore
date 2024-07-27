@@ -10,6 +10,7 @@ def fetch_data_from_db():
         host="your_host",
         port="your_port"
     )
+    
     cursor = conn.cursor()
     yesterday = datetime.now() - timedelta(days=1)
     query = """
