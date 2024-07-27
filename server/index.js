@@ -127,7 +127,8 @@ app.get('/plot', async (req, res) => {
     `;
     // Execute the query
     const result = await db.query(query);
-    console.log(result);
+    const data = result.rows;
+    
     // Result {
     //     command: 'SELECT',
     //     rowCount: 5,

@@ -32,6 +32,7 @@ df = pd.DataFrame(data)
 
 @app.route('/plot/', methods=['POST'])
 def create_plot():
+
     areas = request.args.getlist('areas')
 
     if areas:
@@ -62,32 +63,7 @@ def create_plot():
     # Return the base64 image in JSON format
     return jsonify({'image': img_base64})
 
-    areas = request.args.getlist('areas')
-
-    if areas:
-        areas = ['Month'] + areas
-        if not all(area in df.columns for area in areas):
-            return jsonify({"detail": "Invalid area name"}), 400
-        plot_df = df[areas]
-    else:
-        plot_df = df
-
-    # Melt the dataframe for Plotly
-    plot_df = plot_df.melt(id_vars=['Month'], var_name='Area', value_name='Water Consumed')
-
-    # Create the plot with interpolation for smooth curves
-    fig = px.line(plot_df, x='Month', y='Water Consumed', color='Area', title='Monthly Water Consumption by Area', line_shape='spline')
-
-    # Save the plot to a BytesIO object
-    img_bytes = io.BytesIO()
-    fig.write_image(img_bytes, format='png')
-    img_bytes.seek(0)
-
-    # Convert the BytesIO object to base64
-    img_base64 = base64.b64encode(img_bytes.getvalue()).decode('utf-8')
-
-    # Return the base64 image in JSON format
-    return jsonify({'image': img_base64})
+    
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5050)

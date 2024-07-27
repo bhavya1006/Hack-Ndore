@@ -1,0 +1,1802 @@
+[
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1344,
+            "February": 1354,
+            "March": 1184,
+            "April": 1202,
+            "May": 596,
+            "June": 752,
+            "July": 913,
+            "August": 1154,
+            "September": 1375,
+            "October": 538,
+            "November": 1384,
+            "December": 743
+        },
+        "consumption_avg_month": 1044.9166666666667
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 658,
+            "February": 1240,
+            "March": 554,
+            "April": 1478,
+            "May": 1390,
+            "June": 597,
+            "July": 1256,
+            "August": 1306,
+            "September": 1373,
+            "October": 1380,
+            "November": 718,
+            "December": 722
+        },
+        "consumption_avg_month": 1056.0
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 867,
+            "February": 1253,
+            "March": 502,
+            "April": 1465,
+            "May": 1228,
+            "June": 894,
+            "July": 1150,
+            "August": 848,
+            "September": 834,
+            "October": 888,
+            "November": 1318,
+            "December": 1146
+        },
+        "consumption_avg_month": 1032.75
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 1253,
+            "February": 819,
+            "March": 1377,
+            "April": 577,
+            "May": 1378,
+            "June": 857,
+            "July": 1056,
+            "August": 817,
+            "September": 1250,
+            "October": 1221,
+            "November": 1219,
+            "December": 756
+        },
+        "consumption_avg_month": 1048.3333333333333
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 677,
+            "February": 1362,
+            "March": 657,
+            "April": 891,
+            "May": 766,
+            "June": 1130,
+            "July": 1112,
+            "August": 518,
+            "September": 954,
+            "October": 625,
+            "November": 1452,
+            "December": 1056
+        },
+        "consumption_avg_month": 933.3333333333334
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 593,
+            "February": 645,
+            "March": 956,
+            "April": 1166,
+            "May": 1227,
+            "June": 1188,
+            "July": 589,
+            "August": 1200,
+            "September": 1329,
+            "October": 998,
+            "November": 1283,
+            "December": 744
+        },
+        "consumption_avg_month": 993.1666666666666
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 803,
+            "February": 739,
+            "March": 798,
+            "April": 1405,
+            "May": 666,
+            "June": 1091,
+            "July": 511,
+            "August": 890,
+            "September": 1393,
+            "October": 626,
+            "November": 676,
+            "December": 957
+        },
+        "consumption_avg_month": 879.5833333333334
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 817,
+            "February": 1167,
+            "March": 889,
+            "April": 1067,
+            "May": 1454,
+            "June": 965,
+            "July": 1249,
+            "August": 680,
+            "September": 1455,
+            "October": 1124,
+            "November": 837,
+            "December": 726
+        },
+        "consumption_avg_month": 1035.8333333333333
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 717,
+            "February": 1341,
+            "March": 1407,
+            "April": 1340,
+            "May": 1004,
+            "June": 850,
+            "July": 601,
+            "August": 1487,
+            "September": 603,
+            "October": 858,
+            "November": 690,
+            "December": 834
+        },
+        "consumption_avg_month": 977.6666666666666
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 1442,
+            "February": 1226,
+            "March": 636,
+            "April": 696,
+            "May": 834,
+            "June": 697,
+            "July": 1080,
+            "August": 929,
+            "September": 1488,
+            "October": 1372,
+            "November": 527,
+            "December": 529
+        },
+        "consumption_avg_month": 954.6666666666666
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 733,
+            "February": 1417,
+            "March": 1444,
+            "April": 700,
+            "May": 893,
+            "June": 1326,
+            "July": 682,
+            "August": 547,
+            "September": 1022,
+            "October": 800,
+            "November": 1281,
+            "December": 1459
+        },
+        "consumption_avg_month": 1025.3333333333333
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 1359,
+            "February": 1449,
+            "March": 913,
+            "April": 1357,
+            "May": 1209,
+            "June": 741,
+            "July": 978,
+            "August": 1408,
+            "September": 1168,
+            "October": 1113,
+            "November": 772,
+            "December": 557
+        },
+        "consumption_avg_month": 1085.3333333333333
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 1101,
+            "February": 1291,
+            "March": 1067,
+            "April": 1474,
+            "May": 719,
+            "June": 1402,
+            "July": 1234,
+            "August": 1463,
+            "September": 1429,
+            "October": 834,
+            "November": 1161,
+            "December": 917
+        },
+        "consumption_avg_month": 1174.3333333333333
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 573,
+            "February": 1262,
+            "March": 1019,
+            "April": 853,
+            "May": 687,
+            "June": 780,
+            "July": 1086,
+            "August": 1362,
+            "September": 1124,
+            "October": 1011,
+            "November": 997,
+            "December": 583
+        },
+        "consumption_avg_month": 944.75
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 795,
+            "February": 752,
+            "March": 1351,
+            "April": 1354,
+            "May": 601,
+            "June": 619,
+            "July": 650,
+            "August": 1162,
+            "September": 1216,
+            "October": 780,
+            "November": 796,
+            "December": 956
+        },
+        "consumption_avg_month": 919.3333333333334
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 870,
+            "February": 650,
+            "March": 969,
+            "April": 598,
+            "May": 1052,
+            "June": 876,
+            "July": 524,
+            "August": 1450,
+            "September": 1026,
+            "October": 1037,
+            "November": 1299,
+            "December": 1463
+        },
+        "consumption_avg_month": 984.5
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 540,
+            "February": 993,
+            "March": 1088,
+            "April": 1015,
+            "May": 1221,
+            "June": 730,
+            "July": 1476,
+            "August": 629,
+            "September": 1160,
+            "October": 933,
+            "November": 1265,
+            "December": 1445
+        },
+        "consumption_avg_month": 1041.25
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 1185,
+            "February": 1353,
+            "March": 568,
+            "April": 950,
+            "May": 1171,
+            "June": 1313,
+            "July": 1424,
+            "August": 1287,
+            "September": 1499,
+            "October": 687,
+            "November": 1196,
+            "December": 1443
+        },
+        "consumption_avg_month": 1173.0
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1199,
+            "February": 639,
+            "March": 1222,
+            "April": 732,
+            "May": 1462,
+            "June": 1260,
+            "July": 1278,
+            "August": 1309,
+            "September": 775,
+            "October": 1476,
+            "November": 1197,
+            "December": 538
+        },
+        "consumption_avg_month": 1090.5833333333333
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 561,
+            "February": 1042,
+            "March": 871,
+            "April": 1231,
+            "May": 660,
+            "June": 734,
+            "July": 1141,
+            "August": 1483,
+            "September": 744,
+            "October": 841,
+            "November": 624,
+            "December": 1079
+        },
+        "consumption_avg_month": 917.5833333333334
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 835,
+            "February": 1163,
+            "March": 884,
+            "April": 1101,
+            "May": 748,
+            "June": 655,
+            "July": 1161,
+            "August": 850,
+            "September": 888,
+            "October": 955,
+            "November": 519,
+            "December": 868
+        },
+        "consumption_avg_month": 885.5833333333334
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 733,
+            "February": 552,
+            "March": 1143,
+            "April": 1392,
+            "May": 937,
+            "June": 1372,
+            "July": 877,
+            "August": 1371,
+            "September": 908,
+            "October": 1452,
+            "November": 882,
+            "December": 1449
+        },
+        "consumption_avg_month": 1089.0
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1256,
+            "February": 1127,
+            "March": 1255,
+            "April": 677,
+            "May": 700,
+            "June": 905,
+            "July": 542,
+            "August": 1140,
+            "September": 620,
+            "October": 1184,
+            "November": 1287,
+            "December": 1074
+        },
+        "consumption_avg_month": 980.5833333333334
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 855,
+            "February": 1358,
+            "March": 944,
+            "April": 756,
+            "May": 524,
+            "June": 1136,
+            "July": 850,
+            "August": 607,
+            "September": 878,
+            "October": 1417,
+            "November": 1305,
+            "December": 746
+        },
+        "consumption_avg_month": 948.0
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 809,
+            "February": 872,
+            "March": 653,
+            "April": 1397,
+            "May": 1283,
+            "June": 1448,
+            "July": 552,
+            "August": 1285,
+            "September": 591,
+            "October": 1200,
+            "November": 1190,
+            "December": 1251
+        },
+        "consumption_avg_month": 1044.25
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1088,
+            "February": 951,
+            "March": 718,
+            "April": 504,
+            "May": 939,
+            "June": 731,
+            "July": 962,
+            "August": 1271,
+            "September": 1428,
+            "October": 1408,
+            "November": 785,
+            "December": 990
+        },
+        "consumption_avg_month": 981.25
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 831,
+            "February": 1160,
+            "March": 1303,
+            "April": 1196,
+            "May": 867,
+            "June": 559,
+            "July": 1019,
+            "August": 1075,
+            "September": 613,
+            "October": 666,
+            "November": 1054,
+            "December": 1201
+        },
+        "consumption_avg_month": 962.0
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 629,
+            "February": 770,
+            "March": 696,
+            "April": 1407,
+            "May": 1208,
+            "June": 800,
+            "July": 852,
+            "August": 954,
+            "September": 1289,
+            "October": 1007,
+            "November": 1167,
+            "December": 1471
+        },
+        "consumption_avg_month": 1020.8333333333334
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 794,
+            "February": 541,
+            "March": 1320,
+            "April": 601,
+            "May": 658,
+            "June": 925,
+            "July": 972,
+            "August": 975,
+            "September": 1325,
+            "October": 1189,
+            "November": 959,
+            "December": 1270
+        },
+        "consumption_avg_month": 960.75
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 570,
+            "February": 894,
+            "March": 1250,
+            "April": 1081,
+            "May": 581,
+            "June": 1405,
+            "July": 1497,
+            "August": 1462,
+            "September": 1035,
+            "October": 931,
+            "November": 714,
+            "December": 839
+        },
+        "consumption_avg_month": 1021.5833333333334
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1500,
+            "February": 1486,
+            "March": 635,
+            "April": 1211,
+            "May": 654,
+            "June": 1226,
+            "July": 1488,
+            "August": 730,
+            "September": 999,
+            "October": 1486,
+            "November": 507,
+            "December": 1430
+        },
+        "consumption_avg_month": 1112.6666666666667
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 1124,
+            "February": 1300,
+            "March": 1315,
+            "April": 1411,
+            "May": 1233,
+            "June": 829,
+            "July": 896,
+            "August": 1470,
+            "September": 688,
+            "October": 1305,
+            "November": 1168,
+            "December": 1095
+        },
+        "consumption_avg_month": 1152.8333333333333
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 800,
+            "February": 714,
+            "March": 848,
+            "April": 1254,
+            "May": 649,
+            "June": 916,
+            "July": 554,
+            "August": 688,
+            "September": 728,
+            "October": 1151,
+            "November": 534,
+            "December": 604
+        },
+        "consumption_avg_month": 786.6666666666666
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 557,
+            "February": 973,
+            "March": 637,
+            "April": 604,
+            "May": 860,
+            "June": 586,
+            "July": 766,
+            "August": 1006,
+            "September": 1231,
+            "October": 946,
+            "November": 1138,
+            "December": 1265
+        },
+        "consumption_avg_month": 880.75
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 780,
+            "February": 706,
+            "March": 808,
+            "April": 1023,
+            "May": 765,
+            "June": 694,
+            "July": 1380,
+            "August": 1367,
+            "September": 1461,
+            "October": 976,
+            "November": 1143,
+            "December": 1266
+        },
+        "consumption_avg_month": 1030.75
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1384,
+            "February": 1416,
+            "March": 1137,
+            "April": 935,
+            "May": 900,
+            "June": 881,
+            "July": 852,
+            "August": 675,
+            "September": 1433,
+            "October": 1417,
+            "November": 611,
+            "December": 1361
+        },
+        "consumption_avg_month": 1083.5
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 558,
+            "February": 583,
+            "March": 1447,
+            "April": 857,
+            "May": 869,
+            "June": 521,
+            "July": 612,
+            "August": 1007,
+            "September": 1278,
+            "October": 1158,
+            "November": 579,
+            "December": 1143
+        },
+        "consumption_avg_month": 884.3333333333334
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 778,
+            "February": 1067,
+            "March": 1369,
+            "April": 1488,
+            "May": 1295,
+            "June": 1076,
+            "July": 1267,
+            "August": 1310,
+            "September": 651,
+            "October": 870,
+            "November": 685,
+            "December": 1478
+        },
+        "consumption_avg_month": 1111.1666666666667
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 786,
+            "February": 655,
+            "March": 732,
+            "April": 624,
+            "May": 580,
+            "June": 934,
+            "July": 1419,
+            "August": 1351,
+            "September": 569,
+            "October": 1186,
+            "November": 507,
+            "December": 1382
+        },
+        "consumption_avg_month": 893.75
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 1440,
+            "February": 1417,
+            "March": 741,
+            "April": 666,
+            "May": 1079,
+            "June": 699,
+            "July": 982,
+            "August": 935,
+            "September": 643,
+            "October": 628,
+            "November": 782,
+            "December": 663
+        },
+        "consumption_avg_month": 889.5833333333334
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 953,
+            "February": 938,
+            "March": 821,
+            "April": 1376,
+            "May": 1496,
+            "June": 1204,
+            "July": 1452,
+            "August": 1131,
+            "September": 575,
+            "October": 563,
+            "November": 956,
+            "December": 1479
+        },
+        "consumption_avg_month": 1078.6666666666667
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 586,
+            "February": 970,
+            "March": 1307,
+            "April": 801,
+            "May": 1104,
+            "June": 889,
+            "July": 903,
+            "August": 589,
+            "September": 1437,
+            "October": 703,
+            "November": 822,
+            "December": 558
+        },
+        "consumption_avg_month": 889.0833333333334
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 1351,
+            "February": 1142,
+            "March": 885,
+            "April": 1371,
+            "May": 1051,
+            "June": 882,
+            "July": 637,
+            "August": 1287,
+            "September": 771,
+            "October": 566,
+            "November": 600,
+            "December": 527
+        },
+        "consumption_avg_month": 922.5
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 606,
+            "February": 903,
+            "March": 1405,
+            "April": 1049,
+            "May": 948,
+            "June": 1381,
+            "July": 1476,
+            "August": 1116,
+            "September": 1263,
+            "October": 786,
+            "November": 980,
+            "December": 972
+        },
+        "consumption_avg_month": 1073.75
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 1486,
+            "February": 570,
+            "March": 1492,
+            "April": 1155,
+            "May": 1163,
+            "June": 1175,
+            "July": 529,
+            "August": 625,
+            "September": 890,
+            "October": 565,
+            "November": 1390,
+            "December": 1092
+        },
+        "consumption_avg_month": 1011.0
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 927,
+            "February": 564,
+            "March": 1113,
+            "April": 500,
+            "May": 629,
+            "June": 1409,
+            "July": 692,
+            "August": 563,
+            "September": 796,
+            "October": 1424,
+            "November": 1074,
+            "December": 1207
+        },
+        "consumption_avg_month": 908.1666666666666
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1084,
+            "February": 1451,
+            "March": 1179,
+            "April": 823,
+            "May": 865,
+            "June": 1408,
+            "July": 1236,
+            "August": 588,
+            "September": 726,
+            "October": 824,
+            "November": 1470,
+            "December": 1454
+        },
+        "consumption_avg_month": 1092.3333333333333
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1015,
+            "February": 1050,
+            "March": 1108,
+            "April": 1123,
+            "May": 1483,
+            "June": 818,
+            "July": 1277,
+            "August": 1121,
+            "September": 879,
+            "October": 1391,
+            "November": 1413,
+            "December": 1334
+        },
+        "consumption_avg_month": 1167.6666666666667
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 1163,
+            "February": 1071,
+            "March": 864,
+            "April": 936,
+            "May": 1063,
+            "June": 1307,
+            "July": 1318,
+            "August": 823,
+            "September": 1292,
+            "October": 1457,
+            "November": 1197,
+            "December": 872
+        },
+        "consumption_avg_month": 1113.5833333333333
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 1210,
+            "February": 673,
+            "March": 1329,
+            "April": 504,
+            "May": 556,
+            "June": 1259,
+            "July": 1025,
+            "August": 528,
+            "September": 1100,
+            "October": 1019,
+            "November": 805,
+            "December": 1303
+        },
+        "consumption_avg_month": 942.5833333333334
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 863,
+            "February": 614,
+            "March": 889,
+            "April": 769,
+            "May": 1411,
+            "June": 503,
+            "July": 729,
+            "August": 1472,
+            "September": 1456,
+            "October": 854,
+            "November": 548,
+            "December": 873
+        },
+        "consumption_avg_month": 915.0833333333334
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 617,
+            "February": 1500,
+            "March": 1000,
+            "April": 1428,
+            "May": 521,
+            "June": 1012,
+            "July": 905,
+            "August": 989,
+            "September": 1113,
+            "October": 1249,
+            "November": 685,
+            "December": 1021
+        },
+        "consumption_avg_month": 1003.3333333333334
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 905,
+            "February": 1158,
+            "March": 620,
+            "April": 925,
+            "May": 779,
+            "June": 1488,
+            "July": 1125,
+            "August": 1023,
+            "September": 976,
+            "October": 761,
+            "November": 1392,
+            "December": 1227
+        },
+        "consumption_avg_month": 1031.5833333333333
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 819,
+            "February": 1132,
+            "March": 503,
+            "April": 867,
+            "May": 1407,
+            "June": 869,
+            "July": 1498,
+            "August": 1142,
+            "September": 992,
+            "October": 746,
+            "November": 1466,
+            "December": 890
+        },
+        "consumption_avg_month": 1027.5833333333333
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 1351,
+            "February": 1459,
+            "March": 1017,
+            "April": 1108,
+            "May": 890,
+            "June": 1049,
+            "July": 844,
+            "August": 862,
+            "September": 688,
+            "October": 1255,
+            "November": 1358,
+            "December": 614
+        },
+        "consumption_avg_month": 1041.25
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1211,
+            "February": 1001,
+            "March": 1215,
+            "April": 744,
+            "May": 1473,
+            "June": 1088,
+            "July": 553,
+            "August": 987,
+            "September": 1435,
+            "October": 1271,
+            "November": 1054,
+            "December": 826
+        },
+        "consumption_avg_month": 1071.5
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 1145,
+            "February": 571,
+            "March": 1006,
+            "April": 1071,
+            "May": 929,
+            "June": 582,
+            "July": 633,
+            "August": 1278,
+            "September": 806,
+            "October": 842,
+            "November": 808,
+            "December": 792
+        },
+        "consumption_avg_month": 871.9166666666666
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 550,
+            "February": 944,
+            "March": 509,
+            "April": 1323,
+            "May": 1443,
+            "June": 1220,
+            "July": 725,
+            "August": 568,
+            "September": 1035,
+            "October": 913,
+            "November": 890,
+            "December": 1313
+        },
+        "consumption_avg_month": 952.75
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 1001,
+            "February": 515,
+            "March": 995,
+            "April": 922,
+            "May": 1089,
+            "June": 1443,
+            "July": 606,
+            "August": 622,
+            "September": 568,
+            "October": 920,
+            "November": 917,
+            "December": 603
+        },
+        "consumption_avg_month": 850.0833333333334
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1412,
+            "February": 856,
+            "March": 829,
+            "April": 1079,
+            "May": 899,
+            "June": 512,
+            "July": 584,
+            "August": 1492,
+            "September": 1235,
+            "October": 1446,
+            "November": 1290,
+            "December": 512
+        },
+        "consumption_avg_month": 1012.1666666666666
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 549,
+            "February": 1359,
+            "March": 576,
+            "April": 809,
+            "May": 563,
+            "June": 1285,
+            "July": 1467,
+            "August": 1192,
+            "September": 1288,
+            "October": 922,
+            "November": 1394,
+            "December": 890
+        },
+        "consumption_avg_month": 1024.5
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 968,
+            "February": 918,
+            "March": 659,
+            "April": 1212,
+            "May": 1224,
+            "June": 1276,
+            "July": 815,
+            "August": 610,
+            "September": 502,
+            "October": 838,
+            "November": 512,
+            "December": 1153
+        },
+        "consumption_avg_month": 890.5833333333334
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1458,
+            "February": 1309,
+            "March": 1308,
+            "April": 688,
+            "May": 1402,
+            "June": 1412,
+            "July": 767,
+            "August": 1155,
+            "September": 1044,
+            "October": 967,
+            "November": 553,
+            "December": 972
+        },
+        "consumption_avg_month": 1086.25
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1343,
+            "February": 908,
+            "March": 1087,
+            "April": 775,
+            "May": 1182,
+            "June": 711,
+            "July": 575,
+            "August": 954,
+            "September": 826,
+            "October": 599,
+            "November": 898,
+            "December": 1122
+        },
+        "consumption_avg_month": 915.0
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 834,
+            "February": 1111,
+            "March": 838,
+            "April": 824,
+            "May": 789,
+            "June": 1033,
+            "July": 1170,
+            "August": 703,
+            "September": 517,
+            "October": 927,
+            "November": 1421,
+            "December": 1311
+        },
+        "consumption_avg_month": 956.5
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 1332,
+            "February": 1309,
+            "March": 520,
+            "April": 1405,
+            "May": 973,
+            "June": 1098,
+            "July": 1066,
+            "August": 1174,
+            "September": 610,
+            "October": 1262,
+            "November": 1172,
+            "December": 1428
+        },
+        "consumption_avg_month": 1112.4166666666667
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 1185,
+            "February": 1381,
+            "March": 649,
+            "April": 506,
+            "May": 1007,
+            "June": 1224,
+            "July": 956,
+            "August": 893,
+            "September": 620,
+            "October": 1485,
+            "November": 886,
+            "December": 1331
+        },
+        "consumption_avg_month": 1010.25
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1399,
+            "February": 970,
+            "March": 803,
+            "April": 1308,
+            "May": 1164,
+            "June": 753,
+            "July": 1208,
+            "August": 765,
+            "September": 505,
+            "October": 1082,
+            "November": 1353,
+            "December": 1207
+        },
+        "consumption_avg_month": 1043.0833333333333
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1377,
+            "February": 632,
+            "March": 1225,
+            "April": 922,
+            "May": 989,
+            "June": 887,
+            "July": 1134,
+            "August": 1306,
+            "September": 1188,
+            "October": 1365,
+            "November": 753,
+            "December": 1164
+        },
+        "consumption_avg_month": 1078.5
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 725,
+            "February": 843,
+            "March": 1195,
+            "April": 663,
+            "May": 636,
+            "June": 650,
+            "July": 921,
+            "August": 671,
+            "September": 1247,
+            "October": 840,
+            "November": 1149,
+            "December": 1269
+        },
+        "consumption_avg_month": 900.75
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 886,
+            "February": 1384,
+            "March": 1080,
+            "April": 1234,
+            "May": 778,
+            "June": 804,
+            "July": 1413,
+            "August": 1499,
+            "September": 1262,
+            "October": 976,
+            "November": 937,
+            "December": 1004
+        },
+        "consumption_avg_month": 1104.75
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 695,
+            "February": 935,
+            "March": 736,
+            "April": 800,
+            "May": 723,
+            "June": 632,
+            "July": 943,
+            "August": 814,
+            "September": 1395,
+            "October": 912,
+            "November": 1311,
+            "December": 1451
+        },
+        "consumption_avg_month": 945.5833333333334
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 1035,
+            "February": 669,
+            "March": 1223,
+            "April": 658,
+            "May": 995,
+            "June": 1025,
+            "July": 847,
+            "August": 1399,
+            "September": 1270,
+            "October": 1037,
+            "November": 1146,
+            "December": 1270
+        },
+        "consumption_avg_month": 1047.8333333333333
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 795,
+            "February": 1161,
+            "March": 1466,
+            "April": 683,
+            "May": 702,
+            "June": 547,
+            "July": 1315,
+            "August": 1052,
+            "September": 958,
+            "October": 786,
+            "November": 1240,
+            "December": 1094
+        },
+        "consumption_avg_month": 983.25
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 1056,
+            "February": 1048,
+            "March": 742,
+            "April": 516,
+            "May": 969,
+            "June": 542,
+            "July": 735,
+            "August": 568,
+            "September": 989,
+            "October": 1376,
+            "November": 685,
+            "December": 981
+        },
+        "consumption_avg_month": 850.5833333333334
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 799,
+            "February": 991,
+            "March": 1344,
+            "April": 1328,
+            "May": 1423,
+            "June": 730,
+            "July": 1349,
+            "August": 1134,
+            "September": 1430,
+            "October": 557,
+            "November": 563,
+            "December": 1089
+        },
+        "consumption_avg_month": 1061.4166666666667
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 1236,
+            "February": 1256,
+            "March": 967,
+            "April": 663,
+            "May": 707,
+            "June": 1325,
+            "July": 1437,
+            "August": 1193,
+            "September": 1119,
+            "October": 1287,
+            "November": 908,
+            "December": 698
+        },
+        "consumption_avg_month": 1066.3333333333333
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 1127,
+            "February": 1274,
+            "March": 1305,
+            "April": 681,
+            "May": 957,
+            "June": 540,
+            "July": 1133,
+            "August": 847,
+            "September": 815,
+            "October": 687,
+            "November": 1368,
+            "December": 612
+        },
+        "consumption_avg_month": 945.5
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1322,
+            "February": 958,
+            "March": 1371,
+            "April": 1435,
+            "May": 879,
+            "June": 728,
+            "July": 1269,
+            "August": 1082,
+            "September": 1331,
+            "October": 510,
+            "November": 1472,
+            "December": 949
+        },
+        "consumption_avg_month": 1108.8333333333333
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 728,
+            "February": 783,
+            "March": 1376,
+            "April": 958,
+            "May": 671,
+            "June": 1131,
+            "July": 630,
+            "August": 915,
+            "September": 706,
+            "October": 1394,
+            "November": 616,
+            "December": 963
+        },
+        "consumption_avg_month": 905.9166666666666
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 631,
+            "February": 907,
+            "March": 787,
+            "April": 1234,
+            "May": 517,
+            "June": 1473,
+            "July": 1303,
+            "August": 667,
+            "September": 1289,
+            "October": 662,
+            "November": 1170,
+            "December": 574
+        },
+        "consumption_avg_month": 934.5
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 503,
+            "February": 607,
+            "March": 1374,
+            "April": 1146,
+            "May": 531,
+            "June": 1364,
+            "July": 695,
+            "August": 509,
+            "September": 1030,
+            "October": 964,
+            "November": 982,
+            "December": 564
+        },
+        "consumption_avg_month": 855.75
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 1399,
+            "February": 1356,
+            "March": 861,
+            "April": 1390,
+            "May": 1020,
+            "June": 1128,
+            "July": 1375,
+            "August": 592,
+            "September": 878,
+            "October": 1335,
+            "November": 756,
+            "December": 1358
+        },
+        "consumption_avg_month": 1120.6666666666667
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 1044,
+            "February": 859,
+            "March": 1328,
+            "April": 713,
+            "May": 1086,
+            "June": 1366,
+            "July": 1491,
+            "August": 1455,
+            "September": 790,
+            "October": 1250,
+            "November": 1427,
+            "December": 821
+        },
+        "consumption_avg_month": 1135.8333333333333
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 926,
+            "February": 822,
+            "March": 613,
+            "April": 567,
+            "May": 810,
+            "June": 533,
+            "July": 701,
+            "August": 1404,
+            "September": 1281,
+            "October": 1022,
+            "November": 1044,
+            "December": 1472
+        },
+        "consumption_avg_month": 932.9166666666666
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 885,
+            "February": 1474,
+            "March": 718,
+            "April": 748,
+            "May": 552,
+            "June": 961,
+            "July": 954,
+            "August": 1326,
+            "September": 1166,
+            "October": 1349,
+            "November": 1081,
+            "December": 547
+        },
+        "consumption_avg_month": 980.0833333333334
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 1383,
+            "February": 1205,
+            "March": 894,
+            "April": 997,
+            "May": 1262,
+            "June": 1334,
+            "July": 708,
+            "August": 847,
+            "September": 973,
+            "October": 754,
+            "November": 566,
+            "December": 1427
+        },
+        "consumption_avg_month": 1029.1666666666667
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 899,
+            "February": 1209,
+            "March": 1113,
+            "April": 995,
+            "May": 1266,
+            "June": 892,
+            "July": 1133,
+            "August": 788,
+            "September": 1098,
+            "October": 1273,
+            "November": 512,
+            "December": 1475
+        },
+        "consumption_avg_month": 1054.4166666666667
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 1034,
+            "February": 1269,
+            "March": 1025,
+            "April": 1143,
+            "May": 600,
+            "June": 1497,
+            "July": 676,
+            "August": 735,
+            "September": 1470,
+            "October": 1187,
+            "November": 1173,
+            "December": 1333
+        },
+        "consumption_avg_month": 1095.1666666666667
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 1401,
+            "February": 1106,
+            "March": 871,
+            "April": 1250,
+            "May": 1128,
+            "June": 1364,
+            "July": 1457,
+            "August": 642,
+            "September": 559,
+            "October": 919,
+            "November": 561,
+            "December": 1485
+        },
+        "consumption_avg_month": 1061.9166666666667
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 683,
+            "February": 983,
+            "March": 881,
+            "April": 1036,
+            "May": 1183,
+            "June": 1493,
+            "July": 584,
+            "August": 838,
+            "September": 857,
+            "October": 785,
+            "November": 1292,
+            "December": 1287
+        },
+        "consumption_avg_month": 991.8333333333334
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 1334,
+            "February": 952,
+            "March": 1477,
+            "April": 1215,
+            "May": 721,
+            "June": 1182,
+            "July": 1353,
+            "August": 1464,
+            "September": 1148,
+            "October": 910,
+            "November": 881,
+            "December": 1302
+        },
+        "consumption_avg_month": 1161.5833333333333
+    },
+    {
+        "area_zone": "Zone 2",
+        "consumption_per_month": {
+            "January": 947,
+            "February": 902,
+            "March": 1008,
+            "April": 1253,
+            "May": 1465,
+            "June": 624,
+            "July": 1188,
+            "August": 722,
+            "September": 926,
+            "October": 950,
+            "November": 906,
+            "December": 1297
+        },
+        "consumption_avg_month": 1015.6666666666666
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 513,
+            "February": 597,
+            "March": 1437,
+            "April": 1054,
+            "May": 1385,
+            "June": 754,
+            "July": 566,
+            "August": 881,
+            "September": 1377,
+            "October": 560,
+            "November": 1431,
+            "December": 1062
+        },
+        "consumption_avg_month": 968.0833333333334
+    },
+    {
+        "area_zone": "Zone 3",
+        "consumption_per_month": {
+            "January": 1302,
+            "February": 1435,
+            "March": 866,
+            "April": 1116,
+            "May": 1267,
+            "June": 686,
+            "July": 510,
+            "August": 932,
+            "September": 1498,
+            "October": 1227,
+            "November": 1052,
+            "December": 867
+        },
+        "consumption_avg_month": 1063.1666666666667
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 1401,
+            "February": 759,
+            "March": 1309,
+            "April": 1460,
+            "May": 1241,
+            "June": 881,
+            "July": 926,
+            "August": 1176,
+            "September": 607,
+            "October": 1197,
+            "November": 1306,
+            "December": 690
+        },
+        "consumption_avg_month": 1079.4166666666667
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 1223,
+            "February": 1123,
+            "March": 743,
+            "April": 1467,
+            "May": 1037,
+            "June": 732,
+            "July": 690,
+            "August": 1154,
+            "September": 1105,
+            "October": 863,
+            "November": 637,
+            "December": 1364
+        },
+        "consumption_avg_month": 1011.5
+    },
+    {
+        "area_zone": "Zone 1",
+        "consumption_per_month": {
+            "January": 642,
+            "February": 1295,
+            "March": 1177,
+            "April": 996,
+            "May": 1463,
+            "June": 1132,
+            "July": 1058,
+            "August": 1239,
+            "September": 1205,
+            "October": 1078,
+            "November": 874,
+            "December": 1262
+        },
+        "consumption_avg_month": 1118.4166666666667
+    },
+    {
+        "area_zone": "Zone 5",
+        "consumption_per_month": {
+            "January": 649,
+            "February": 917,
+            "March": 1196,
+            "April": 1235,
+            "May": 698,
+            "June": 1379,
+            "July": 977,
+            "August": 1335,
+            "September": 871,
+            "October": 1252,
+            "November": 1499,
+            "December": 765
+        },
+        "consumption_avg_month": 1064.4166666666667
+    },
+    {
+        "area_zone": "Zone 4",
+        "consumption_per_month": {
+            "January": 952,
+            "February": 770,
+            "March": 1165,
+            "April": 782,
+            "May": 1130,
+            "June": 1102,
+            "July": 628,
+            "August": 702,
+            "September": 601,
+            "October": 744,
+            "November": 507,
+            "December": 1032
+        },
+        "consumption_avg_month": 842.9166666666666
+    }
+]
