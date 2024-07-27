@@ -19,7 +19,7 @@ models = load_models()
 scaler = load('scaler.joblib')
 
 # Scheduled job to run daily at a fixed time
-@scheduler.task('cron', id='daily_job', hour=12, minute=0)
+# @scheduler.task('cron', id='daily_job', hour=12, minute=0)
 def scheduled_job():
     data = fetch_data_from_db()
     anomalies = predict_anomaly(data, models, scaler)

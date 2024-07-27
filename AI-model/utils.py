@@ -6,8 +6,7 @@ def fetch_data_from_db():
     conn = psycopg2.connect(
         dbname="your_dbname",
         user="your_username",
-        password="your_password",
-        host="your_host",
+f        host="your_host",
         port="your_port"
     )
     
