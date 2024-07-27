@@ -1,75 +1,55 @@
+from flask import Flask, request, send_file, jsonify
 import pandas as pd
-import plotly.graph_objects as go
-from flask import Flask, request, send_file
-import io
-import base64
+import plotly.express as px
+import numpy as np
+import os
 
-# Create a Flask app
 app = Flask(__name__)
 
-def create_water_consumption_graph(data, selected_area=None):
-    """
-    Create a Plotly graph of water consumption.
-    
-    :param data: DataFrame containing 'Month', 'Water_Consumed', and 'Area' columns
-    :param selected_area: Optional, filter to select specific area
-    :return: Figure object
-    """
-    fig = go.Figure()
+# Generate more varied synthetic data
+np.random.seed(42)
+months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+area1 = [100, 150, 130, 170, 120, 160, 140, 180, 160, 170, 150, 140]
+area2 = [90, 110, 140, 130, 160, 150, 170, 140, 190, 160, 200, 180]
+area3 = [80, 140, 100, 130, 110, 140, 150, 120, 170, 140, 190, 160]
 
-    # Filter data if a specific area is selected
-    if selected_area:
-        data = data[data['Area'] == selected_area]
+# Add some random variation to make the data less straight
+area1 = np.array(area1) + np.random.normal(0, 5, len(area1))
+area2 = np.array(area2) + np.random.normal(0, 5, len(area2))
+area3 = np.array(area3) + np.random.normal(0, 5, len(area3))
 
-    # Group by month and area, and plot
-    for area in data['Area'].unique():
-        area_data = data[data['Area'] == area]
-        fig.add_trace(go.Scatter(
-            x=area_data['Month'],
-            y=area_data['Water_Consumed'],
-            mode='lines+markers',
-            name=area
-        ))
+data = {
+    'Month': months,
+    'Area1': area1,
+    'Area2': area2,
+    'Area3': area3
+}
 
-    # Update layout
-    fig.update_layout(
-        title='Water Consumption Over Months',
-        xaxis_title='Month',
-        yaxis_title='Water Consumed',
-        legend_title='Area'
-    )
+df = pd.DataFrame(data)
 
-    return fig
+@app.route('/plot/', methods=['GET'])
+def create_plot():
+    areas = request.args.getlist('areas')
 
-def save_graph_as_image(fig):
-    """
-    Save Plotly figure as an image and return as bytes.
-    
-    :param fig: Plotly figure object
-    :return: BytesIO object of the image
-    """
-    img_bytes = io.BytesIO()
-    fig.write_image(img_bytes)
-    img_bytes.seek(0)
-    return img_bytes
+    if areas:
+        areas = ['Month'] + areas
+        if not all(area in df.columns for area in areas):
+            return jsonify({"detail": "Invalid area name"}), 400
+        plot_df = df[areas]
+    else:
+        plot_df = df
 
-@app.route('/get_graph', methods=['GET'])
-def get_graph():
-    # Dummy data for demonstration
-    data = pd.DataFrame({
-        'Month': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-        'Water_Consumed': [100, 150, 200, 250, 300, 350],
-        'Area': ['North', 'North', 'South', 'South', 'East', 'East']
-    })
-    
-    selected_area = request.args.get('area', None)
-    
-    fig = create_water_consumption_graph(data, selected_area)
-    
-    # Get the image as bytes
-    img_bytes = save_graph_as_image(fig)
-    
-    return send_file(img_bytes, mimetype='image/png', as_attachment=True, attachment_filename='graph.png')
+    # Melt the dataframe for Plotly
+    plot_df = plot_df.melt(id_vars=['Month'], var_name='Area', value_name='Water Consumed')
+
+    # Create the plot with interpolation for smooth curves
+    fig = px.line(plot_df, x='Month', y='Water Consumed', color='Area', title='Monthly Water Consumption by Area', line_shape='spline')
+
+    # Save the plot to a file
+    output_file = 'water_consumption_plot.png'
+    fig.write_image(output_file)
+
+    return send_file(output_file, mimetype='image/png', as_attachment=True, download_name=output_file)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0', port=8000)
