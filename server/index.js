@@ -1,7 +1,7 @@
-import express from "express";
-import bodyParser from "body-parser";
-import pg from "pg";
-import bcrypt from "bcrypt";
+const express = require("express");
+const bodyParser = require("body-parser");
+const pg = require("pg");
+const bcrypt = require("bcrypt");
 
 const app = express();
 const port = 3000;
@@ -22,7 +22,30 @@ app.use(express.static("public"));
 app.get("/", (req, res) => {
 
 });
-app.get("/get_details" (req,res));
+app.get("/get_details", async (req,res)=> {
+    const result = await db.query("SELECT * FROM households_data");
+    const data = result.rows;
+    console.log(data);
+});
+app.post("/ascending", async (req,res)=> {
+    const result = await db.query("SELECT * FROM households_data ORDER BY id ASC");
+    const data = result.rows;
+    console.log(data);
+});
+app.post("/descending", async (req,res)=> {
+    const result = await db.query("SELECT * FROM households_data ORDER BY id DESC");
+    const data = result.rows;
+    console.log(data);
+});
+app.post("/filter", async (req,res)=> {
+    const input = req.body.input;
+    const result = await db.query(`SELECT * FROM households_data WHERE house_number LIKE '%' || $1 || '%' OR street_address LIKE '%' || $1 || '%' OR area_zone LIKE '%' || $1 || '%' OR household_id LIKE '%' || $1 || '%' OR resident_name LIKE '%' || $1 || '%' OR number_of_residents LIKE '%' || $1 || '%' OR type_of_residence LIKE '%' || $1 || '%' OR water_used_avg_per_day LIKE '%' || $1 || '%' OR water_used_last_month LIKE '%' || $1 || '%' OR payment_status LIKE '%' || $1 || '%' OR last_payment_date LIKE '%' || $1 || '%' OR meter_reading_date LIKE '%' || $1 || '%' OR previous_meter_reading LIKE '%' || $1 || '%' OR current_meter_reading LIKE '%' || $1 || '%' OR water_usage_trend LIKE '%' || $1 || '%';`,[input]);
+    const data = result.rows;
+    console.log(data);
+});
+app.post("/risk", async (req,res)=> {
+    
+});
 
 app.post("/register", async (req, res) => {
     const email = req.body.username;
