@@ -52,6 +52,13 @@ app.post("/filter", async (req, res) => {
   const data = result.rows;
   console.log(data);
 });
+
+app.get("/reports", async (req, res) => {
+  const result = await db.query("SELECT * FROM reports");
+  res.send(result.rows);
+
+});
+
 app.post("/reports", async (req, res) => {
   const result = await db.query("SELECT * FROM reports");
   console.log(result.rows);
