@@ -210,7 +210,7 @@ app.get('/plot', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
-app.get('/plot', async (req, res) => {
+app.get('/piechart', async (req, res) => {
   try {
     const query = `
         SELECT area_zone, 
@@ -223,66 +223,24 @@ app.get('/plot', async (req, res) => {
     const tosend = [
       {
           "area_zone": "Zone 2",
-          "consumption_per_month": {
-              "January": 1344,
-              "February": 1354,
-              "March": 1184,
-              "April": 1202,
-              "May": 596,
-              "June": 752,
-              "July": 913,
-              "August": 1154,
-              "September": 1375,
-              "October": 538,
-              "November": 1384,
-              "December": 743
-          },
           "consumption_avg_month": 1044.9166666666667
       },
       {
           "area_zone": "Zone 1",
-          "consumption_per_month": {
-              "January": 658,
-              "February": 1240,
-              "March": 554,
-              "April": 1478,
-              "May": 1390,
-              "June": 597,
-              "July": 1256,
-              "August": 1306,
-              "September": 1373,
-              "October": 1380,
-              "November": 718,
-              "December": 722
-          },
           "consumption_avg_month": 1056.0
       },
       {
           "area_zone": "Zone 5",
-          "consumption_per_month": {
-              "January": 867,
-              "February": 1253,
-              "March": 502,
-              "April": 1465,
-              "May": 1228,
-              "June": 894,
-              "July": 1150,
-              "August": 848,
-              "September": 834,
-              "October": 888,
-              "November": 1318,
-              "December": 1146
-          },
           "consumption_avg_month": 1032.75
       },
     ]
 
-    const response = await axios.post('http://127.0.0.1:5050/plot', tosend, {
+    const response = await axios.post('http://127.0.0.1:5050/piechart', tosend, {
       responseType: 'arraybuffer'
     });
 
     // Save the response to a file in the public/uploads directory
-    const filename = 'water_consumption_plot.png';
+    const filename = 'water_consumption_piechart.png';
     const filePath = path.join(__dirname, 'public', 'uploads', filename);
     fs.writeFileSync(filePath, response.data);
 
