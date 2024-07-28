@@ -44,13 +44,9 @@ function Sidebar({ children }) {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/insights" className={`flex items-center p-2 text-white rounded-lg dark:text-white ${activeRoute === '/insights' ? 'bg-[#465677] dark:hover:bg-gray-700' : 'hover:bg-[#2A303D] dark:hover:bg-gray-700'} group`}>
-                                <svg className='w-10 h-10 fill-gray-500 group-hover:fill-white' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36">
-                                    <rect x="6.48" y="18" width="5.76" height="11.52" rx="1" ry="1"></rect>
-                                    <rect x="15.12" y="6.48" width="5.76" height="23.04" rx="1" ry="1"></rect>
-                                    <rect x="23.76" y="14.16" width="5.76" height="15.36" rx="1" ry="1"></rect>
-                                </svg>
-                                <span className="flex-1 ms-3 whitespace-nowrap text-xl">Insights</span>
+                            <Link to="/risks" className={`flex items-center p-2 text-white rounded-lg dark:text-white ${activeRoute === '/insights' ? 'bg-[#465677] dark:hover:bg-gray-700' : 'hover:bg-[#2A303D] dark:hover:bg-gray-700'} group`}>
+                            <svg className='w-10 h10' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12ZM12 6.25C12.4142 6.25 12.75 6.58579 12.75 7V13C12.75 13.4142 12.4142 13.75 12 13.75C11.5858 13.75 11.25 13.4142 11.25 13V7C11.25 6.58579 11.5858 6.25 12 6.25ZM12 17C12.5523 17 13 16.5523 13 16C13 15.4477 12.5523 15 12 15C11.4477 15 11 15.4477 11 16C11 16.5523 11.4477 17 12 17Z"  className='fill-gray-500 group-hover:fill-white'></path> </g></svg>
+                                <span className="flex-1 ms-3 whitespace-nowrap text-xl">Risk Alerts</span>
                             </Link>
                         </li>
                         <li>
@@ -79,9 +75,9 @@ function Sidebar({ children }) {
                 </div>
             </aside>
 
-            <div className='h-full flex flex-col  gap-10 overflow-y-auto overflow-x-hidden  ml-0 md:ml-72'>
+            <div className='h-full flex flex-col w-full  gap-10 overflow-y-auto overflow-x-hidden  ml-0 md:ml-72'>
             <nav className="w-full border-b-[1px]  border-white md:border-gray-400 bg-[#172f60] md:bg-white justify-between md:justify-between text-3xl flex py-3 z-50 ">
-                <button onClick={toggleSidebar} className="  text-white  md:hidden">
+                <button onClick={toggleSidebar} className="  text-white text-xl  md:hidden ml-10 my-auto">
                     ☰
                 </button>
                 <div className='flex gap-3  pl-4'>

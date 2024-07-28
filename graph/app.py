@@ -4,6 +4,10 @@ import plotly.express as px
 import numpy as np
 import os
 from flask_cors import CORS
+import io
+from PIL import Image
+
+
 
 app = Flask(__name__)
 CORS(app, resources={r"/plot": {"origins": "http://localhost:3000"}})
@@ -54,6 +58,32 @@ def create_plot():
     fig.write_image(output_file)
     print(output_file)
     return send_file(output_file, mimetype='image/png', as_attachment=True, download_name=output_file)
+
+@app.route('/piechart', methods=['POST'])
+def pieChart():
+    req_data = request.get_json()
+    print("Request Data:", req_data)
+    area_zones = [item['area_zone'] for item in req_data]
+    consumption_avg_months = [item['consumption_avg_month'] for item in req_data]
+    fig = px.pie(
+            values=consumption_avg_months,
+            names=area_zones,
+            title='Average Monthly Water Consumption by Area'
+        )
+    fig.update_layout(
+        width=800,  # Set the desired width
+        height=400  # Set the desired height
+    )
+
+    
+        # Save the plot to a BytesIO object
+    img_bytes = io.BytesIO()
+    fig.write_image(img_bytes, format='png')
+    img_bytes.seek(0)
+
+        # Return the image as a binary stream
+    return send_file(img_bytes, mimetype='image/png')
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5050)
