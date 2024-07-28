@@ -16,12 +16,12 @@ const saltRounds = 10;
 
 const db = new pg.Client({
   user: "postgres",
-  host: "localhost",
+  host: "35.200.163.250",
   database: "Water_Supply",
-  password: "779076063361",
+  password: "root",
   port: 5432,
 });
-// db.connect();
+db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -52,7 +52,9 @@ app.post("/filter", async (req, res) => {
   const data = result.rows;
   console.log(data);
 });
-app.post("/risk", async (req, res) => {
+app.post("/reports", async (req, res) => {
+  const result = await db.query("SELECT * FROM reports");
+  console.log(result.rows);
 
 });
 
