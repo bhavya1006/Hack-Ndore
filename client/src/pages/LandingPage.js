@@ -2,6 +2,7 @@ import React from 'react'
 import logo from '../assets/logo.png'
 import water from '../assets/water.jpg'
 import { Link } from 'react-router-dom' 
+import video from '../assets/video.mp4'
 
 function LandingPage() {
     return (
@@ -17,8 +18,10 @@ function LandingPage() {
                         
                     </div>
                 </div>
-                <div className='flex mx-10 p-10 flex-col lg:flex-row justify-center items-center gap-10 mt-14 bg-gray-300 bg-opacity-50 rounded-xl border border-gray-800'>
-    <img className='h-96 w-96 rounded-full my-auto' src='https://img.naidunia.com/naidunia/ndnimg/23082020/23_08_2020-narmada_line_indore_face_four_2020823_154048.jpg' />
+                <div className='flex mx-10 p-10 flex-col justify-center mb-7 items-center gap-10 mt-14 bg-gray-300 bg-opacity-50 rounded-xl border border-gray-800'>
+    {/* <img className='h-96 w-96 rounded-full my-auto' src='https://img.naidunia.com/naidunia/ndnimg/23082020/23_08_2020-narmada_line_indore_face_four_2020823_154048.jpg' /> */}
+    <video className='rounded-lg' src={video} autoPlay={true} controls/>
+   
     <div className='flex flex-1 text-gray-900 text-center items-center text-2xl font-semibold font-serif'>
         A Smart Water Management System for Indore will install IoT devices, specifically water supply meters, to measure
         the amount of water consumed by average households. These meters will transmit data to a central server using low-
