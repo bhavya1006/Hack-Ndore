@@ -142,66 +142,66 @@ app.get('/plot', async (req, res) => {
         ORDER BY water_used_last_month DESC
         LIMIT 5
     `;
-    // const result=await db.query(query);
+    const result=await db.query(query);
 
-    const tosend = [
-      {
-          "area_zone": "Zone 2",
-          "consumption_per_month": {
-              "January": 1344,
-              "February": 1354,
-              "March": 1184,
-              "April": 1202,
-              "May": 596,
-              "June": 752,
-              "July": 913,
-              "August": 1154,
-              "September": 1375,
-              "October": 538,
-              "November": 1384,
-              "December": 743
-          },
-          "consumption_avg_month": 1044.9166666666667
-      },
-      {
-          "area_zone": "Zone 1",
-          "consumption_per_month": {
-              "January": 658,
-              "February": 1240,
-              "March": 554,
-              "April": 1478,
-              "May": 1390,
-              "June": 597,
-              "July": 1256,
-              "August": 1306,
-              "September": 1373,
-              "October": 1380,
-              "November": 718,
-              "December": 722
-          },
-          "consumption_avg_month": 1056.0
-      },
-      {
-          "area_zone": "Zone 5",
-          "consumption_per_month": {
-              "January": 867,
-              "February": 1253,
-              "March": 502,
-              "April": 1465,
-              "May": 1228,
-              "June": 894,
-              "July": 1150,
-              "August": 848,
-              "September": 834,
-              "October": 888,
-              "November": 1318,
-              "December": 1146
-          },
-          "consumption_avg_month": 1032.75
-      },
-    ]
+    // const tosend = [
+    //   {
+    //       "area_zone": "Zone 2",
+    //       "consumption_per_month": {
+    //           "January": 1344,
+    //           "February": 1354,
+    //           "March": 1184,
+    //           "April": 1202,
+    //           "May": 596,
+    //           "June": 752,
+    //           "July": 913,
+    //           "August": 1154,
+    //           "September": 1375,
+    //           "October": 538,
+    //           "November": 1384,
+    //           "December": 743
+    //       },
+    //       "consumption_avg_month": 1044.9166666666667
+    //   },
+    //   {
+    //       "area_zone": "Zone 1",
+    //       "consumption_per_month": {
+    //           "January": 658,
+    //           "February": 1240,
+    //           "March": 554,
+    //           "April": 1478,
+    //           "May": 1390,
+    //           "June": 597,
+    //           "July": 1256,
+    //           "August": 1306,
+    //           "September": 1373,
+    //           "October": 1380,
+    //           "November": 718,
+    //           "December": 722
+    //       },
+    //       "consumption_avg_month": 1056.0
+    //   },
+    //   {
+    //       "area_zone": "Zone 5",
+    //       "consumption_per_month": {
+    //           "January": 867,
+    //           "February": 1253,
+    //           "March": 502,
+    //           "April": 1465,
+    //           "May": 1228,
+    //           "June": 894,
+    //           "July": 1150,
+    //           "August": 848,
+    //           "September": 834,
+    //           "October": 888,
+    //           "November": 1318,
+    //           "December": 1146
+    //       },
+    //       "consumption_avg_month": 1032.75
+    //   },
+    // ]
 
-    const response = await axios.post('http://127.0.0.1:5050/plot', tosend, {
+    const response = await axios.post('http://127.0.0.1:5050/plot', result, {
       responseType: 'arraybuffer'
     });
 
@@ -220,12 +220,10 @@ app.get('/plot', async (req, res) => {
 app.get('/piechart', async (req, res) => {
   try {
     const query = `
-        SELECT area_zone, 
+        SELECT area_zone, consumption_avg_month
         FROM households_data
-        ORDER BY water_used_last_month DESC
-        LIMIT 5
     `;
-    // const result=await db.query(query);
+    const result=await db.query(query);
 
     const tosend = [
       {
@@ -242,7 +240,7 @@ app.get('/piechart', async (req, res) => {
       },
     ]
 
-    const response = await axios.post('http://127.0.0.1:5050/piechart', tosend, {
+    const response = await axios.post('http://127.0.0.1:5050/piechart', result, {
       responseType: 'arraybuffer'
     });
 
