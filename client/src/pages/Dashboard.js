@@ -3,7 +3,7 @@ import axios from 'axios'
 
 function Dashboard() {
     const [imageURL, setImageURL] = useState('');
-    const [imageUpieChart, setPieChart] = useState('');
+    const [pieChart, setPieChart] = useState('');
 
 
     useEffect(() => {
@@ -12,10 +12,10 @@ function Dashboard() {
             console.log(response)
         });
 
-        // axios.get('http://localhost:3001/piechart/').then((response) => {
-        //     setPieChart(`http://localhost:3001/${response.data.fileUrl}`)
-        //     console.log(response)
-        // }); 
+        axios.get('http://localhost:3001/piechart').then((response) => {
+            setPieChart(`http://localhost:3001/${response.data.fileUrl}`)
+            console.log(response)
+        }); 
     }, []);
 
     return (
@@ -67,10 +67,10 @@ function Dashboard() {
                     </div>
                 </div>
             </div>
-            <div className="w-full flex mx-3 items-center justify-center py-3">
-                <div className="flex-1 rounded-xl border-black border-opacity-15 border-2 p-3">
-                    <div className="flex text-center flex-col text-xl font-bold">
-                        <h2>Average Water Consumption Per Month</h2>
+            <div className="w-full flex px-3 :px-8 mt-3 items-center justify-center py-3 ">
+                <div className="flex-1 rounded-xl pr-3">
+                    <div className="flex w-full text-center justify-center items-center flex-col text-xl  rounded-lg">
+                        <img className='w-full md:w-11/12 border-[1px] border-gray-400 rounded-lg' src={pieChart} alt="Fetched Image" />
                     </div>
                 </div>
             </div>
