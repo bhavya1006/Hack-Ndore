@@ -3,6 +3,12 @@ const bodyParser = require("body-parser");
 const pg = require("pg");
 const bcrypt = require("bcrypt");
 const axios = require("axios");
+const path = require('path');
+const fs = require('fs');
+const cors = require('cors');
+
+
+
 
 const app = express();
 const port = 3001;
@@ -15,10 +21,12 @@ const db = new pg.Client({
   password: "779076063361",
   port: 5432,
 });
-db.connect();
+// db.connect();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(cors());
+
 
 app.get("/", (req, res) => {
 
@@ -125,64 +133,213 @@ app.get('/plot', async (req, res) => {
         ORDER BY water_used_last_month DESC
         LIMIT 5
     `;
-    // Execute the query
-    const result = await db.query(query);
-    const data = result.rows;
-    
-    // Result {
-    //     command: 'SELECT',
-    //     rowCount: 5,
-    //     oid: null,
-    //     rows: [
-    //       { area_zone: 'Zone 2', water_used_last_month: '9652' },
-    //       { area_zone: 'Zone 4', water_used_last_month: '9516' },
-    //       { area_zone: 'Zone 2', water_used_last_month: '9484' },
-    //       { area_zone: 'Zone 2', water_used_last_month: '9081' },
-    //       { area_zone: 'Zone 1', water_used_last_month: '9009' }
-    //     ],
-    //     fields: [
-    //       Field {
-    //         name: 'area_zone',
-    //         tableID: 16775,
-    //         columnID: 4,
-    //         dataTypeID: 25,
-    //         dataTypeSize: -1,
-    //         dataTypeModifier: -1,
-    //         format: 'text'
-    //       },
-    //       Field {
-    //         name: 'water_used_last_month',
-    //         tableID: 16775,
-    //         columnID: 10,
-    //         dataTypeID: 25,
-    //         dataTypeSize: -1,
-    //         dataTypeModifier: -1,
-    //         format: 'text'
-    //       }
-    //     ],
-    //     _parsers: [ [Function: noParse], [Function: noParse] ],
-    //     _types: TypeOverrides {
-    //       _types: {
-    //         getTypeParser: [Function: getTypeParser],
-    //         setTypeParser: [Function: setTypeParser],
-    //         arrayParser: [Object],
-    //         builtins: [Object]
-    //       },
-    //       text: {},
-    //       binary: {}
-    //     },
-    //     RowCtor: null,
-    //     rowAsArray: false,
-    //     _prebuiltEmptyResultObject: { area_zone: null, water_used_last_month: null }
-    //   }
-    res.send("done")
- 
+    // const result=await db.query(query);
 
+    const tosend = [
+      {
+          "area_zone": "Zone 2",
+          "consumption_per_month": {
+              "January": 1344,
+              "February": 1354,
+              "March": 1184,
+              "April": 1202,
+              "May": 596,
+              "June": 752,
+              "July": 913,
+              "August": 1154,
+              "September": 1375,
+              "October": 538,
+              "November": 1384,
+              "December": 743
+          },
+          "consumption_avg_month": 1044.9166666666667
+      },
+      {
+          "area_zone": "Zone 1",
+          "consumption_per_month": {
+              "January": 658,
+              "February": 1240,
+              "March": 554,
+              "April": 1478,
+              "May": 1390,
+              "June": 597,
+              "July": 1256,
+              "August": 1306,
+              "September": 1373,
+              "October": 1380,
+              "November": 718,
+              "December": 722
+          },
+          "consumption_avg_month": 1056.0
+      },
+      {
+          "area_zone": "Zone 5",
+          "consumption_per_month": {
+              "January": 867,
+              "February": 1253,
+              "March": 502,
+              "April": 1465,
+              "May": 1228,
+              "June": 894,
+              "July": 1150,
+              "August": 848,
+              "September": 834,
+              "October": 888,
+              "November": 1318,
+              "December": 1146
+          },
+          "consumption_avg_month": 1032.75
+      },
+    ]
+
+    const response = await axios.post('http://127.0.0.1:5050/plot', tosend, {
+      responseType: 'arraybuffer'
+    });
+
+    // Save the response to a file in the public/uploads directory
+    const filename = 'water_consumption_plot.png';
+    const filePath = path.join(__dirname, 'public', 'uploads', filename);
+    fs.writeFileSync(filePath, response.data);
+
+    // Send the file URL as the response
+    res.json({ fileUrl: `/uploads/${filename}` });
   } catch (error) {
-    console.error('Error fetching data:', error);
-    res.status(500).json({ error: 'Internal Server Error' });
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
   }
-})
+});
+app.get('/plot', async (req, res) => {
+  try {
+    const query = `
+        SELECT area_zone, 
+        FROM households_data
+        ORDER BY water_used_last_month DESC
+        LIMIT 5
+    `;
+    // const result=await db.query(query);
+
+    const tosend = [
+      {
+          "area_zone": "Zone 2",
+          "consumption_per_month": {
+              "January": 1344,
+              "February": 1354,
+              "March": 1184,
+              "April": 1202,
+              "May": 596,
+              "June": 752,
+              "July": 913,
+              "August": 1154,
+              "September": 1375,
+              "October": 538,
+              "November": 1384,
+              "December": 743
+          },
+          "consumption_avg_month": 1044.9166666666667
+      },
+      {
+          "area_zone": "Zone 1",
+          "consumption_per_month": {
+              "January": 658,
+              "February": 1240,
+              "March": 554,
+              "April": 1478,
+              "May": 1390,
+              "June": 597,
+              "July": 1256,
+              "August": 1306,
+              "September": 1373,
+              "October": 1380,
+              "November": 718,
+              "December": 722
+          },
+          "consumption_avg_month": 1056.0
+      },
+      {
+          "area_zone": "Zone 5",
+          "consumption_per_month": {
+              "January": 867,
+              "February": 1253,
+              "March": 502,
+              "April": 1465,
+              "May": 1228,
+              "June": 894,
+              "July": 1150,
+              "August": 848,
+              "September": 834,
+              "October": 888,
+              "November": 1318,
+              "December": 1146
+          },
+          "consumption_avg_month": 1032.75
+      },
+    ]
+
+    const response = await axios.post('http://127.0.0.1:5050/plot', tosend, {
+      responseType: 'arraybuffer'
+    });
+
+    // Save the response to a file in the public/uploads directory
+    const filename = 'water_consumption_plot.png';
+    const filePath = path.join(__dirname, 'public', 'uploads', filename);
+    fs.writeFileSync(filePath, response.data);
+
+    // Send the file URL as the response
+    res.json({ fileUrl: `/uploads/${filename}` });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).send('Internal Server Error');
+  }
+});
+
+
+// Result {
+//     command: 'SELECT',
+//     rowCount: 5,
+//     oid: null,
+//     rows: [
+//       { area_zone: 'Zone 2', water_used_last_month: '9652' },
+//       { area_zone: 'Zone 4', water_used_last_month: '9516' },
+//       { area_zone: 'Zone 2', water_used_last_month: '9484' },
+//       { area_zone: 'Zone 2', water_used_last_month: '9081' },
+//       { area_zone: 'Zone 1', water_used_last_month: '9009' }
+//     ],
+//     fields: [
+//       Field {
+//         name: 'area_zone',
+//         tableID: 16775,
+//         columnID: 4,
+//         dataTypeID: 25,
+//         dataTypeSize: -1,
+//         dataTypeModifier: -1,
+//         format: 'text'
+//       },
+//       Field {
+//         name: 'water_used_last_month',
+//         tableID: 16775,
+//         columnID: 10,
+//         dataTypeID: 25,
+//         dataTypeSize: -1,
+//         dataTypeModifier: -1,
+//         format: 'text'
+//       }
+//     ],
+//     _parsers: [ [Function: noParse], [Function: noParse] ],
+//     _types: TypeOverrides {
+//       _types: {
+//         getTypeParser: [Function: getTypeParser],
+//         setTypeParser: [Function: setTypeParser],
+//         arrayParser: [Object],
+//         builtins: [Object]
+//       },
+//       text: {},
+//       binary: {}
+//     },
+//     RowCtor: null,
+//     rowAsArray: false,
+//     _prebuiltEmptyResultObject: { area_zone: null, water_used_last_month: null }
+
+
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

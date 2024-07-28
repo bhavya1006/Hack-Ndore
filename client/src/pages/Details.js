@@ -13,7 +13,7 @@ import MenuItem from '@mui/material/MenuItem';
 import IconButton from '@mui/material/IconButton';
 import SortIcon from '@mui/icons-material/Sort';
 import data from '../indore_households (1).json';
-import logoo from '../assets/logoo.png';
+import logo from '../assets/logo.png';
 
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
@@ -127,10 +127,10 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   
     return (
       <div className=''>
-        <div className='w-full text-5xl font-bold text-center mb-10'>
+        <div className='w-full text-3xl font-bold text-center mb-10'>
         <marquee scrollamount={20} className='flex flex-col'>
-            <div className='flex items-center'>             <img src={logoo} className='w-48 flex'/>
-            Detail of Water Supply in every household <img src={logoo} className='w-48 flex'/> Municipal Corporation,  Indoor</div>
+            <div className='flex items-center'>             <img src={logo} className='w-48 flex'/>
+            Detail of Water Supply in every household <img src={logo} className='w-48 flex'/> Municipal Corporation,  Indoor</div>
             </marquee>
         </div>
         <StyledTableContainer component={Paper}>
