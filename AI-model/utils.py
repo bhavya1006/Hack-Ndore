@@ -4,19 +4,20 @@ from datetime import datetime, timedelta
 
 def fetch_data_from_db():
     conn = psycopg2.connect(
-        dbname="your_dbname",
-        user="your_username",
-f        host="your_host",
-        port="your_port"
+        dbname="Water_Supply",
+        user="postgres",
+        host="35.200.163.250",
+        password="root",
+        port="5432"
     )
     
     cursor = conn.cursor()
     yesterday = datetime.now() - timedelta(days=1)
     query = """
-    SELECT household_id, timestamp, water_consumption, locality, household_size, pressure, temperature
-    FROM water_usage
-    WHERE timestamp >= %s
+    SELECT household_id, timestamp, water_consumption, locality, household_size, pressure, temperature , avg_water_consumption
+    FROM test_data
     """
+    # WHERE timestamp >= %s
     cursor.execute(query, (yesterday,))
     rows = cursor.fetchall()
     cursor.close()
@@ -31,15 +32,20 @@ f        host="your_host",
             "Locality": row[3],
             "Household Size": row[4],
             "Pressure (bar)": row[5],
-            "Temperature (C)": row[6]
+            "Temperature (C)": row[6],
+            "Avg_Water_Consumption": row[-1]
         })
     
     return data
 
 def send_anomalies_to_server(anomalies):
-    url = "http://your_node_server/api/receive_anomalies"
+    url = "http://localhost/api/receive_anomalies"
     response = requests.post(url, json=anomalies)
     if response.status_code == 200:
         print("Anomalies sent successfully!")
     else:
         print(f"Failed to send anomalies: {response.status_code}")
+
+if __name__ == "__main__":
+    data = fetch_data_from_db()
+    print(f"Fetched {len(data)} records from the database")

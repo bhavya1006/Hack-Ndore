@@ -1,7 +1,10 @@
 from flask import Flask
 from flask_apscheduler import APScheduler
-from main import load_models, predict_anomaly, preprocess_data
+from anomaly import load_models, predict_anomaly, preprocess_data
 from utils import fetch_data_from_db, send_anomalies_to_server
+from joblib import load
+import jsonify
+import psycopg2
 
 app = Flask(__name__)
 
@@ -19,14 +22,43 @@ models = load_models()
 scaler = load('scaler.joblib')
 
 # Scheduled job to run daily at a fixed time
-# @scheduler.task('cron', id='daily_job', hour=12, minute=0)
+@scheduler.task('cron', id='daily_job', hour=0, minute=1)
 def scheduled_job():
     data = fetch_data_from_db()
+    
+    print(f"Fetched {len(data)} records from the database")
     anomalies = predict_anomaly(data, models, scaler)
     if not anomalies.empty:
-        anomalies_to_send = anomalies[["Household ID", "Timestamp", "Water Consumption (liters)", "Locality", "Household Size"]].to_dict(orient='records')
-        send_anomalies_to_server(anomalies_to_send)
-    print("Scheduled job executed")
+        anomalies_to_send = anomalies[[ "Household ID","Locality" ,"Water Consumption (liters)", "Pressure (bar)", "Household Size", "Avg_Water_Consumption"]].to_dict(orient='records')
+        anomalies_to_send = [anomaly for anomaly in anomalies_to_send if anomaly['Water Consumption (liters)'] < 100]
+        # Establish a connection to the PostgreSQL database
+        conn = psycopg2.connect(
+            dbname="Water_Supply",
+            user="postgres",
+            host="35.200.163.250",
+            password="root",
+            port="5432"
+        )
 
+        # Create a cursor object to interact with the database
+        cursor = conn.cursor()
+        
+        # Define the SQL query to insert the data into the table
+        insert_query = "INSERT INTO reports (household_id, location, water_consumption,avg_water_consumption) VALUES (%s, %s, %s, %s)"
+        # Iterate over the list of dictionaries and execute the insert query for each dictionary
+        for anomaly in anomalies_to_send:
+            values = (anomaly["Household ID"], anomaly["Locality"], anomaly["Water Consumption (liters)"], anomaly["Avg_Water_Consumption"])
+            cursor.execute(insert_query, values)
+
+        # Commit the changes to the database
+        conn.commit()
+
+        # Close the cursor and the database connection
+        cursor.close()
+        conn.close()
+        print(anomalies_to_send)
+        scheduler.shutdown()
+        send_anomalies_to_server(anomalies_to_send)
+        return jsonify({"status": "success", "received": send_anomalies_to_server(anomalies_to_send)}), 200
 if __name__ == '__main__':
-    app.run(debug=True)
+    scheduled_job()

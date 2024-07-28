@@ -1,5 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import LocalOutlierFactor
 from joblib import dump, load
 
 def preprocess_data(df, scaler=None, fit_scaler=False):
