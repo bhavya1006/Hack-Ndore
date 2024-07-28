@@ -84,7 +84,7 @@ function Sidebar({ children }) {
                     <div className=''>
                         <img src={logo} className={`h-16 w-16`}   alt="Logo" />
                     </div>
-                    <a href="https://flowbite.com" className="flex w-full">
+                    <a href="/" className="flex w-full">
                         <span className="self-center text-white md:text-black text-2xl font-semibold text-center dark:text-white">Indore Municipal Corporation</span>
                     </a>
                 </div>
