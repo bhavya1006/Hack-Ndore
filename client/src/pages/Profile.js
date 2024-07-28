@@ -11,7 +11,7 @@ function Profile() {
                         alt="Travis Howard" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX1XEzQaJH4Ftweq0MjLjKY6Hiu0-owm4vZA&s" />
                 </div>
                 <div className='flex flex-col ml-11'>
-                    <div className='text-5xl font-bold'>
+                    <div className='text-3xl font-bold'>
                         Ayushman Lakshkar
                     </div>
                     <div className='text-3xl text-gray-600'>
@@ -20,13 +20,13 @@ function Profile() {
                 </div>
             </div>
             <div className='my-7 flex flex-col gap-3'>
-                <div className='text-2xl font-bold'>
+                <div className='text-xl font-bold'>
                     Email Address - <text className='font-medium'>ayushman.lakshkar7@gmail.com</text>
                 </div>
-                <div className='text-2xl font-bold'>
+                <div className='text-xl font-bold'>
                     Phone Number - <text className='font-medium'>+91 99xxxxxxx0</text>
                 </div>
-                <div className='text-2xl font-bold'>
+                <div className='text-xl font-bold'>
                     Address - <text className='font-medium'>Ghass Mandi, Kilagate, Indore, Madhya Pradesh</text>
                 </div>
             </div>
