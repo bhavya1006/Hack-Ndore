@@ -4,6 +4,7 @@ import axios from 'axios'
 function Dashboard() {
     const [imageURL, setImageURL] = useState('');
     const [pieChart, setPieChart] = useState('');
+    const [details,setDetails] = useState('');
 
 
     useEffect(() => {
@@ -16,6 +17,10 @@ function Dashboard() {
             setPieChart(`http://localhost:3001/${response.data.fileUrl}`)
             console.log(response)
         }); 
+
+        axios.get('http://localhost:3001/get_dashboard_details').then((response)=>{
+    setDetails(response.data)
+        })
     }, []);
 
     return (
@@ -23,7 +28,7 @@ function Dashboard() {
             <div className="w-full grid lg:grid-cols-4 md:grid-rows-1 md:grid-cols-2 sm:grid-rows-2 grid-cols-1 grid-rows-4 px-4 h-auto py-2 gap-7 items-center justify-center">
                 <div className=" flex-1 h-full text-white text-xl border-[1px] border-gray-400 bg-[#6761D9] flex justify-center items-center p-3 flex-col rounded-lg gap-3 ">
                     <div className='flex w-full justify-center text-3xl '>
-                        <text>10245 L</text>
+                        <text>{details.water_consumption}</text>
                     </div>
                     <div className='text-lg'>
                         <text>supplied this month</text>
@@ -32,7 +37,7 @@ function Dashboard() {
                 </div>
                 <div className="flex-1 text-white text-xl border-[1px] border-gray-400 bg-[#2B89DB] flex justify-center items-center flex-col  rounded-lg gap-3 p-3 ">
                     <div className='flex w-full justify-center text-3xl'>
-                        <text>1024 L</text>
+                        <text>{parseFloat(details.water_avg_consumption).toFixed(3)}</text>
                     </div>
                     <div className='text-lg'>
                         <text>Water consumed /month (Avg.)</text>
@@ -42,7 +47,7 @@ function Dashboard() {
                 <div className="flex-1 h-full text-white text-xl border-[1px] border-gray-400 bg-[#F7A00D] flex justify-center items-center flex-col rounded-lg px-3 ">
                     <div className='flex w-full justify-center text-3xl'>
 
-                        <text>10</text>
+                        <text>{details.risks}</text>
                     </div>
                     <div className='text-lg'>
                         Risks of Leakages
@@ -52,7 +57,7 @@ function Dashboard() {
                 </div>
                 <div className="flex-1 h-full px-3 text-white text-xl border-[1px] border-gray-400 bg-[#DF4544] flex justify-center items-center flex-col rounded-lg gap-3 ">
                     <div className='flex w-full justify-center text-3xl'>
-                        <text>42</text>
+                        <text>{details.complaints}</text>
                     </div>
                     <div className='text-lg'>
                         Complaints pending

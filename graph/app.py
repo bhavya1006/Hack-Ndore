@@ -31,9 +31,9 @@ np.random.seed(42)
 @app.route('/plot/', methods=['POST'])
 def create_plot():
     req_data = request.get_json()
-    # print("Request Data:", req_data)
+    print("Request Data:", req_data)
     months = list(req_data[0]['consumption_per_month'].keys())
-    # print(months)
+    print(months)
 
     data={}
 

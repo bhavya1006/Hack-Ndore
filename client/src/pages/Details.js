@@ -1,54 +1,8 @@
 import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell, { tableCellClasses } from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import TablePagination from '@mui/material/TablePagination';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-import IconButton from '@mui/material/IconButton';
-import SortIcon from '@mui/icons-material/Sort';
-import data from '../indore_households (1).json';
 import logo from '../assets/logo.png';
+import axios from 'axios'
 
 
-const StyledTableCell = styled(TableCell)(({ theme }) => ({
-    [`&.${tableCellClasses.head}`]: {
-      backgroundColor: '#E8F5E9', 
-      color: theme.palette.common.black,
-      fontSize: 14,
-      minWidth: 180,
-      fontWeight: 'bold',
-      border: '1px solid #ccc', 
-    },
-    [`&.${tableCellClasses.body}`]: {
-      fontSize: 14,
-      minWidth: 180,
-      textAlign: 'center',
-      border: '1px solid #ccc', 
-    },
-  }));
-  
-  const StyledTableRow = styled(TableRow)(({ theme }) => ({
-    '&:nth-of-type(even)': {
-      backgroundColor: '#E8F5E9', 
-    },
-    '&:nth-of-type(odd)': {
-      backgroundColor: '#E1F5FE', 
-    },
-    '&:last-child td, &:last-child th': {
-      border: 0,
-    },
-  }));
-  
-  const StyledTableContainer = styled(TableContainer)(({ theme }) => ({
-    border: '2px solid #ccc', 
-    borderRadius: '8px', 
-  }));
   
 
   function Details() {
@@ -58,6 +12,28 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
     const [sortDirection, setSortDirection] = React.useState('asc');
     const [sortColumn, setSortColumn] = React.useState('');
     const [filterValues, setFilterValues] = React.useState({});
+    const [data, setData] = React.useState([]);
+    const [headers, setHeaders] = React.useState([]);
+
+    React.useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const response = await axios.get('http://localhost:3001/get_details');
+              console.log(response.data);
+              const filteredData = response.data.map(item => {
+                  const { water_bill_last_month,payment_status,last_payment_date,id, ...rest } = item;
+                  return rest;
+              });
+              setData(filteredData);
+              if (filteredData.length > 0) {
+                  setHeaders(Object.keys(filteredData[0]));
+              }
+          } catch (error) {
+              console.error('Error fetching data:', error);
+          }
+      };
+      fetchData();
+  }, []);
   
     const handleChangePage = (event, newPage) => {
       setPage(newPage);
@@ -123,84 +99,43 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
       })
       .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
   
-    const headers = Object.keys(data[0] || {});
-  
+
     return (
       <div className=''>
-        <div className='w-full text-3xl font-bold text-center mb-10'>
-        <marquee scrollamount={20} className='flex flex-col'>
-            <div className='flex items-center'>             <img src={logo} className='w-48 flex'/>
-            Detail of Water Supply in every household <img src={logo} className='w-48 flex'/> Municipal Corporation,  Indoor</div>
-            </marquee>
-        </div>
-        <StyledTableContainer component={Paper}>
-          <Table sx={{ minWidth: 700 }} aria-label="customized table">
-            <TableHead>
-              <TableRow>
-                {headers.map((header) => (
-                  <StyledTableCell key={header}>
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: '',
-                        textAlign: 'center',
-                      }}
-                    >
-                      {header.replace(/_/g, ' ').toUpperCase()}
-                      <IconButton
-                        aria-controls="menu"
-                        aria-haspopup="true"
-                        onClick={(event) => handleOpenMenu(event, header)}
-                      >
-                        <SortIcon color='warning' />
-                      </IconButton>
-                      <Menu
-                        id="menu"
-                        anchorEl={anchorEl?.element}
-                        open={Boolean(anchorEl?.element) && anchorEl?.column === header}
-                        onClose={handleCloseMenu}
-                      >
-                        <MenuItem onClick={() => handleSort(header)}>
-                          {sortDirection === 'asc' ? 'Descending' : 'Ascending'}
-                        </MenuItem>
-                        <MenuItem onClick={() => handleClearFilter(header)}>
-                          Clear Filter
-                        </MenuItem>
-                        <MenuItem onClick={() => handleFilter(header)}>
-                          Filter by
-                        </MenuItem>
-                      </Menu>
+            <div className='w-full text-3xl font-bold text-center mb-10'>
+                <div className='flex w-full justify-center items-center text-2xl'>
+                    <img src={logo} className='w-16 flex mr-10' />
+                    Details water supply in each household, Municipal Corporation, Indore
                     </div>
-                  </StyledTableCell>
-                ))}
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {paginatedRows.map((row) => (
-                <StyledTableRow key={row.household_id}>
-                  {headers.map((header) => (
-                    <StyledTableCell key={header}>
-                      {row[header] !== null ? row[header].toString() : 'N/A'}
-                    </StyledTableCell>
-                  ))}
-                </StyledTableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </StyledTableContainer>
-        <div style={{ padding: '16px', display: 'flex', justifyContent: 'flex-end' }}>
-          <TablePagination
-            component="div"
-            count={data.length}
-            rowsPerPage={rowsPerPage}
-            page={page}
-            onPageChange={handleChangePage}
-            // Disable row per page selection
-            onRowsPerPageChange={() => {}}
-          />
+            </div>
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg border-[1px] border-gray-400 mx-3 mb-9">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-700 dark:text-black">
+                    <thead className="text-xs text-gray-800 uppercase bg-gray-50 dark:bg-gray-800 dark:text-black">
+                        <tr>
+                            {headers.map((header, index) => (
+                                <th scope="col" className="px-6 py-3 text-center" key={index} style={{ minWidth: '150px' }}>
+                                  <div className='flex align-center justify-center'>
+                                    {header.replace(/_/g, ' ')}
+                                    <svg className='w-4 h-4 my-auto ml-2' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21 6H19M21 12H16M21 18H16M7 20V13.5612C7 13.3532 7 13.2492 6.97958 13.1497C6.96147 13.0615 6.93151 12.9761 6.89052 12.8958C6.84431 12.8054 6.77934 12.7242 6.64939 12.5617L3.35061 8.43826C3.22066 8.27583 3.15569 8.19461 3.10948 8.10417C3.06849 8.02393 3.03853 7.93852 3.02042 7.85026C3 7.75078 3 7.64677 3 7.43875V5.6C3 5.03995 3 4.75992 3.10899 4.54601C3.20487 4.35785 3.35785 4.20487 3.54601 4.10899C3.75992 4 4.03995 4 4.6 4H13.4C13.9601 4 14.2401 4 14.454 4.10899C14.6422 4.20487 14.7951 4.35785 14.891 4.54601C15 4.75992 15 5.03995 15 5.6V7.43875C15 7.64677 15 7.75078 14.9796 7.85026C14.9615 7.93852 14.9315 8.02393 14.8905 8.10417C14.8443 8.19461 14.7793 8.27583 14.6494 8.43826L11.3506 12.5617C11.2207 12.7242 11.1557 12.8054 11.1095 12.8958C11.0685 12.9761 11.0385 13.0615 11.0204 13.1497C11 13.2492 11 13.3532 11 13.5612V17L7 20Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                                  </div>
+                                </th>
+                            ))}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {data.map((item, index) => (
+                            <tr key={index} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                                {Object.entries(item).map(([key, value], subIndex) => (
+                                    <td key={subIndex} className="px-6 py-4 text-center" style={{ minWidth: '150px' }}>
+                                        {value !== null ? value.toString() : 'N/A'}
+                                    </td>
+                                ))}
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </div>
     );
   }
   

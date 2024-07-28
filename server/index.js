@@ -6,6 +6,7 @@ const axios = require("axios");
 const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
+const { syncBuiltinESMExports } = require("module");
 
 
 
@@ -34,7 +35,7 @@ app.get("/", (req, res) => {
 app.get("/get_details", async (req, res) => {
   const result = await db.query("SELECT * FROM households_data");
   const data = result.rows;
-  console.log(data);
+  res.send(data)
 });
 app.post("/ascending", async (req, res) => {
   const result = await db.query("SELECT * FROM households_data ORDER BY id ASC");
@@ -61,7 +62,7 @@ app.get("/reports", async (req, res) => {
 
 app.post("/reports", async (req, res) => {
   const result = await db.query("SELECT * FROM reports");
-  console.log(result.rows);
+  res.send(result.rows);
 
 });
 
@@ -134,15 +135,42 @@ app.post("/login", async (req, res) => {
 
 });
 
+const transformData = (data) => {
+  console.log(data)
+  return data.map(item => {
+      const consumptionPerMonth = {};
+      const months = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+      months.forEach(month => {
+          const key = `consumption_per_month__${month}`;
+          if (item[key] !== undefined) {
+              consumptionPerMonth[month.charAt(0).toUpperCase() + month.slice(1)] = Number(item[key]);
+          }
+      });
+
+      return {
+          "area_zone": item.area_zone,
+          "consumption_per_month": consumptionPerMonth,
+          "consumption_avg_month": Number(item.consumption_avg_month)
+      };
+  });
+};
+
 app.get('/plot', async (req, res) => {
   try {
     const query = `
-        SELECT area_zone, water_used_last_month
-        FROM households_data
+        SELECT *
+        FROM generated_data
         ORDER BY water_used_last_month DESC
         LIMIT 5
     `;
-    const result=await db.query(query);
+
+    const result=await db.query(`
+        SELECT *
+        FROM generated_data
+        ORDER BY consumption_avg_month DESC
+        LIMIT 5
+    `);
 
     // const tosend = [
     //   {
@@ -201,7 +229,10 @@ app.get('/plot', async (req, res) => {
     //   },
     // ]
 
-    const response = await axios.post('http://127.0.0.1:5050/plot', result, {
+   const fi_data= transformData(result.rows)
+  //  console.log(fi_data)
+
+    const response = await axios.post('http://127.0.0.1:5050/plot', fi_data, {
       responseType: 'arraybuffer'
     });
 
@@ -217,32 +248,67 @@ app.get('/plot', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
+
+function calculateAvgConsumption(data) {
+  const zoneConsumption = {};
+
+  data.forEach(record => {
+      const { area_zone, consumption_avg_month } = record;
+      const consumption = parseFloat(consumption_avg_month);
+      if (!zoneConsumption[area_zone]) {
+          zoneConsumption[area_zone] = {
+              totalConsumption: 0,
+              count: 0
+          };
+      }
+      if (!isNaN(consumption)) {
+          zoneConsumption[area_zone].totalConsumption += consumption;
+          zoneConsumption[area_zone].count += 1;
+      }
+  });
+
+  return Object.keys(zoneConsumption).map(zone => {
+      const { totalConsumption, count } = zoneConsumption[zone];
+      return {
+          area_zone: zone,
+          consumption_avg_month: totalConsumption / count
+      };
+  });
+}
+
 app.get('/piechart', async (req, res) => {
   try {
     const query = `
         SELECT area_zone, consumption_avg_month
-        FROM households_data
+        FROM generated_data
     `;
-    const result=await db.query(query);
+    const result=await db.query(`
+        SELECT area_zone, consumption_avg_month
+        FROM generated_data
+    `);
 
-    const tosend = [
-      {
-          "area_zone": "Zone 2",
-          "consumption_avg_month": 1044.9166666666667
-      },
-      {
-          "area_zone": "Zone 1",
-          "consumption_avg_month": 1056.0
-      },
-      {
-          "area_zone": "Zone 5",
-          "consumption_avg_month": 1032.75
-      },
-    ]
+     const send = calculateAvgConsumption(result.rows)
+    // const tosend = [
+    //   {
+    //       "area_zone": "Zone 2",
+    //       "consumption_avg_month": 1044.9166666666667
+    //   },
+    //   {
+    //       "area_zone": "Zone 1",
+    //       "consumption_avg_month": 1056.0
+    //   },
+    //   {
+    //       "area_zone": "Zone 5",
+    //       "consumption_avg_month": 1032.75
+    //   },
+    // ]
+    console.log(send)
 
-    const response = await axios.post('http://127.0.0.1:5050/piechart', result, {
+    const response = await axios.post('http://127.0.0.1:5050/piechart', send, {
       responseType: 'arraybuffer'
     });
+
+    console.log(response);
 
     // Save the response to a file in the public/uploads directory
     const filename = 'water_consumption_piechart.png';
@@ -257,6 +323,10 @@ app.get('/piechart', async (req, res) => {
   }
 });
 
+app.get('/get_complaints', async (req, res) => {
+  const result =await db.query(`SELECT * FROM complaints`)
+  res.send(result.rows);
+})
 
 // Result {
 //     command: 'SELECT',
@@ -304,6 +374,28 @@ app.get('/piechart', async (req, res) => {
 //     rowAsArray: false,
 //     _prebuiltEmptyResultObject: { area_zone: null, water_used_last_month: null }
 
+
+app.get('/get_dashboard_details', async (req, res) => {
+  try {
+    const waterMonth = await db.query(`SELECT consumption_per_month__january, consumption_avg_month FROM generated_data`);
+    const complaints = await db.query('SELECT * FROM complaints');
+    const risks = await db.query(`SELECT * FROM reports`);
+
+    const data = {
+      water_consumption: waterMonth.rows[0].consumption_per_month__january,
+      water_avg_consumption: waterMonth.rows[0].consumption_avg_month,
+      risks: risks.rows.length,
+      complaints: complaints.rows.length,
+    };
+
+    console.log(data);
+
+    res.send(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send("Internal Server Error");
+  }
+});
 
 
 app.listen(port, () => {
